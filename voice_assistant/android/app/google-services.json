@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "712313697842",
+    "project_id": "voice-assistant-d5693",
+    "storage_bucket": "voice-assistant-d5693.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712313697842:android:91e8d14c148a5b6d3e6e2b",
+        "android_client_info": {
+          "package_name": "com.example.voice_assistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712313697842-d37fndkq1vtd4msfrbanb83fkulitgt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1pGturRl1WYPer63ilhFbnIVJ5uC_g0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712313697842-d37fndkq1vtd4msfrbanb83fkulitgt5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712313697842:android:ad1a384ac593450e3e6e2b",
+        "android_client_info": {
+          "package_name": "com.example.voice_assistant.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712313697842-d37fndkq1vtd4msfrbanb83fkulitgt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1pGturRl1WYPer63ilhFbnIVJ5uC_g0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712313697842-d37fndkq1vtd4msfrbanb83fkulitgt5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

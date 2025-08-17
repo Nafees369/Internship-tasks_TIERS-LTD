@@ -3,10 +3,6 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
-    
-  // Add the Google services Gradle plugin
-    id("com.google.gms.google-services")
-  
 }
 
 android {
@@ -26,8 +22,6 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.voice_assistant"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -36,34 +30,10 @@ android {
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+            // For now use the debug signing config for testing
             signingConfig = signingConfigs.getByName("debug")
         }
     }
-    // Define a list of flavor dimensions
-flavorDimensions.add("default")
-
-// Configure product flavors
-productFlavors {
-    // Create the 'dev' flavor
-    create("dev") {
-        // Assign a dimension to this flavor
-        dimension = "default"
-        // Add a suffix to the application ID for this flavor
-        applicationIdSuffix = ".dev"
-        // Define a string resource value specifically for this flavor
-        resValue("string", "app_name", "Voice Assistant (Dev)")
-    }
-
-    // Create the 'prod' flavor
-    create("prod") {
-        // Assign the same dimension
-        dimension = "default"
-        // Define the string resource value for the production build
-        resValue("string", "app_name", "Voice Assistant")
-    }
-}
 
 }
 
@@ -72,19 +42,11 @@ flutter {
 }
 
 dependencies {
-  // ...
-
-  // Import the Firebase BoM
-  implementation(platform("com.google.firebase:firebase-bom:34.1.0"))
-
-  // When using the BoM, you don't specify versions in Firebase library dependencies
-
-  // Add the dependency for the Firebase SDK for Google Analytics
-  implementation("com.google.firebase:firebase-analytics")
-
-  // TODO: Add the dependencies for any other Firebase products you want to use
-  // See https://firebase.google.com/docs/android/setup#available-libraries
-  // For example, add the dependencies for Firebase Authentication and Cloud Firestore
-  implementation("com.google.firebase:firebase-auth")
-  implementation("com.google.firebase:firebase-firestore")
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-appcheck-debug:18.0.0")
 }
+
+// Apply google services plugin using Kotlin DSL apply
+// The plugin version should be declared in the project-level build.gradle(.kts) classpath.
+// If you previously used `apply plugin: 'com.google.gms.google-services'` (Groovy) convert to:
+apply(plugin = "com.google.gms.google-services")
